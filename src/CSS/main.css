@@ -3,7 +3,6 @@ body {
     width: 90%;
     height: auto;
     font-family: Arial, sans-serif; /* Changer la police de caractères */
-
 }
 
 /* Navbar container */
@@ -12,7 +11,6 @@ body {
     height: 10vh;
     margin-bottom: 3vh;
     margin-top: 1vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +39,6 @@ body {
     background-color: #007bff; /* Couleur de fond lorsque le lien est actif */
 }
 
-
 .dashboard{
     width: 100%;
     height: 80vh;
@@ -49,7 +46,6 @@ body {
     display: flex;
     gap: 1vw;
     margin-bottom: 3vh;
-
 }
 
 .data-container{
@@ -58,7 +54,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3vh;
-
 }
 
 .data{
@@ -66,7 +61,6 @@ body {
     height: 30%;
     background-color: #007bff;
     border-radius: 5px;
-
 }
 
 .dashboard {
@@ -106,6 +100,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5vh;
 }
 
 .log {
@@ -116,34 +111,60 @@ body {
     scrollbar-color: #ddd #f0f0f0; /* Couleur de la barre de défilement */
 }
 
- table {
-    width: 100%;
+/* Style général du tableau */
+table {
     border-collapse: collapse;
-    font-size: 16px; /* Taille de la police */
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-th,  td {
-    padding: 10px; /* Espacement intérieur des cellules */
-    border: 1px solid #ddd;
+table thead{
+    position: sticky;
+    top: 0;
+
+}
+
+table thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Style des cellules de l'en-tête et du corps */
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table td:first-child {
     text-align: center;
 }
 
-th {
-    background-color: #f9f9f9;
-    font-weight: bold; /* Texte en gras pour les en-têtes */
-    text-align: center;
+/* Style des lignes du corps du tableau */
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
 }
 
- tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-
+/* Style des lignes paires du corps du tableau */
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
 }
 
-tbody tr:hover {
-    background-color: #f0f0f0;
+/* Style du hover sur les lignes du corps */
+table tbody tr:hover {
+    background-color: #d7e8fa;
+    transition: background-color 0.3s ease;
 }
 
-.mode{
+/* Style de la dernière ligne du tableau */
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff;
+}
+
+.mode {
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -180,10 +201,11 @@ tbody tr:hover {
     margin-bottom: 10px; /* Espacement entre les deux groupes de boutons */
 }
 
-.up-arrow-container{
+.up-arrow-container {
     flex-direction: column;
     justify-content: end;
 }
+
 .another-arrow-container {
     gap: 5%; /* Espacement entre les boutons */
 }
@@ -206,6 +228,11 @@ tbody tr:hover {
     background-color: #0056b3;
 }
 
-.mode-button:focus{
+.mode-button:focus {
     background-color: #26313e;
+}
+
+.control-button.active {
+    background-color: #0060c6;
+    color: #fff;
 }

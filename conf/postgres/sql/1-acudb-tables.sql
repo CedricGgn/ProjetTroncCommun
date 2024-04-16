@@ -11,5 +11,3 @@ INSERT INTO users (username, password_hash) VALUES ('admin', 'admin');
 INSERT INTO users (username, password_hash) VALUES ('user1', 'mdp1');
 INSERT INTO users (username, password_hash) VALUES ('user2', 'mdp2');
 INSERT INTO users (username, password_hash) VALUES ('user3', 'mdp3');
-
-

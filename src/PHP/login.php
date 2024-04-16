@@ -44,7 +44,7 @@ else{
     $hashed_password = $result_psw[0]['password_hash'];
     // Utilisation de password_verify lorsque le mdp est hashé
     if ($password == $hashed_password ) {
-        if ($username = 'admin'){
+        if ($username == 'admin'){
             echo "Connexion à la session administrateur";
         }
         else{

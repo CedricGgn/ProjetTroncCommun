@@ -1,6 +1,6 @@
 // Écouteur d'événements pour empêcher le comportement par défaut des touches fléchées et de la barre d'espace
 window.addEventListener("keydown", function(e) {
-    if([,"ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
         e.preventDefault();
     }
 }, false);

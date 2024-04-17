@@ -12,7 +12,7 @@ body {
     margin-bottom: 3vh;
     margin-top: 1vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #0056b3; /* Couleur de fond de la navbar */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce sous la navbar */
@@ -39,6 +39,21 @@ body {
     background-color: #007bff; /* Couleur de fond lorsque le lien est actif */
 }
 
+/*
+#username {
+    display: inline-block;
+    padding: 10px; /* ajustez selon vos besoins 
+    border-radius: 50%; /* rend le cadre circulaire 
+    border: 2px solid black; /* couleur, épaisseur et style du trait 
+    width: fit-content; /* s'ajuste à la largeur du contenu 
+    text-align: center; /* centre le texte dans le cercle 
+}
+*/
+
+.text_navbar{
+    color: #fff; /* Couleur du texte */
+
+}
 .dashboard{
     width: 100%;
     height: 80vh;

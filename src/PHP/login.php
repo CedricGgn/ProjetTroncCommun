@@ -2,10 +2,6 @@
 
 session_start();
 
-// Définir des variables de session
-$_SESSION['username'] = $_POST["username"];
-$_SESSION['password'] = $_POST["password"];
-
 // Accéder aux variables de session
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
@@ -32,13 +28,17 @@ else{
     // Récupérer le mot de passe hashé à partir de la base de données
     $hashed_password = $result_psw[0]['password_hash'];
     // Utilisation de password_verify lorsque le mdp est hashé
+
     if ($password == $hashed_password ) {
         if ($username == 'admin'){
-            echo "Connexion à la session administrateur";
         }
         else{
-            echo "Connexion à la session utilisateur";
-        }   
+        }
+        // ajouter la var d'env $_SESSION en tant que var global pour l'environnement twig
+        $twig->addGlobal('session', $_SESSION);
+        echo $twig->render('main.twig', [
+            'username' => $_SESSION['username']
+        ]);
     } else {
         echo "Mot de passe incorrect : Connexion échouée";
     }

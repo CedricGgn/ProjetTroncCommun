@@ -39,6 +39,21 @@ body {
     background-color: #007bff; /* Couleur de fond lorsque le lien est actif */
 }
 
+/*
+#username {
+    display: inline-block;
+    padding: 10px; /* ajustez selon vos besoins 
+    border-radius: 50%; /* rend le cadre circulaire 
+    border: 2px solid black; /* couleur, épaisseur et style du trait 
+    width: fit-content; /* s'ajuste à la largeur du contenu 
+    text-align: center; /* centre le texte dans le cercle 
+}
+*/
+
+.text_navbar{
+    color: #fff; /* Couleur du texte */
+
+}
 .dashboard{
     width: 100%;
     height: 80vh;

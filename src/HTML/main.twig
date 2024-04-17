@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/main.css">
-
 </head>
 <body>
     <div class="navbar">
-        <a href="http://localhost:50180/HTML/main.html">Accueil</a>
-        <a href="http://localhost:50180/HTML/login.html">Log in</a>
+        <a class = "text_navbar" href="../PHP/connection.php">Accueil</a>
+        {% if session.username is defined %}
+            <div class = "text_navbar">
+                <i class="fi fi-rr-user"></i>{{ session.username }}<a href="logout.php">Déconnexion</a>
+            </div>
+        {% else %}
+            <div>
+                <a href="../HTML/login.html">Connexion</a>
+            </div>
+        {% endif %}
     </div>
     <div class="dashboard">
         <div class="data-container">

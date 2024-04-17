@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-require_once '../vendor/autoload.php';
 
 // Accéder aux variables de session
 $username = $_SESSION['username'];

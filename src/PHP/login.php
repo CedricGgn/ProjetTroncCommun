@@ -1,12 +1,12 @@
 <?php
 
 session_start();
+require ("connection.php");
 
 // Accéder aux variables de session
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-require 'connection.php';
 
 // Requête de selection des infos de la bdd correspondant aux identifiants entrés dans le formulaire
 $queryusername = "SELECT username FROM \"users\" WHERE username = '$username' ";

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CAV</title>
     <link rel="stylesheet" href="../CSS/main.css">
 </head>
 <body>
     <div class="navbar">
-        <a class = "text_navbar" href="../PHP/connection.php">Accueil</a>
+        <a class = "text_navbar" href="main.php">Accueil</a>
         {% if session.username is defined %}
             <div class = "text_navbar">
-                <i class="fi fi-rr-user"></i>{{ session.username }}<a href="logout.php">Déconnexion</a>
-            </div>
+                <!--<i class="fi fi-rr-user"></i>-->{{ session.username }}<a href="logout.php">Déconnexion</a>
+            </div>  
         {% else %}
             <div>
                 <a href="../HTML/login.html">Connexion</a>

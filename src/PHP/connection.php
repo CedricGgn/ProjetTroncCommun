@@ -9,7 +9,6 @@ try {
     $dsn = "pgsql:host=$host;port=5432;dbname=$db";
     $dbh = new PDO($dsn, $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo("Connexion réussie !");
  
 } catch (PDOException $e) {
     echo "Échec de la connexion à la base de données : " . $e->getMessage();
@@ -23,9 +22,7 @@ try {
  $loader = new \Twig\Loader\FilesystemLoader('../HTML');
  // Utilisation de la variable dans la configuration de Twig
  $twig = new \Twig\Environment($loader, [
-    'cache' => '../cache',
- ]);
-
- 
+    'cache' => $isProduction ? '../cache' : false, // Utiliser le cache en production, sinon désactiver
+]);
 
 ?>

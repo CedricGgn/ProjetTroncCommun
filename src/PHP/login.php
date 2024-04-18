@@ -3,9 +3,8 @@
 session_start();
 
 // Accéder aux variables de session
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
-
+$username = $_POST['username'];
+$password = $_POST['password'];
 require 'connection.php';
 
 // Requête de selection des infos de la bdd correspondant aux identifiants entrés dans le formulaire
@@ -34,6 +33,7 @@ else{
         }
         else{
         }
+        $_SESSION['username'] = $username;
         // ajouter la var d'env $_SESSION en tant que var global pour l'environnement twig
         $twig->addGlobal('session', $_SESSION);
         echo $twig->render('main.twig', [

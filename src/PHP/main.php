@@ -6,10 +6,6 @@ session_start();
 if (isset($_SESSION['username'])) {
     // ajouter la var d'env $_SESSION en tant que var global pour l'environnement twig
     $twig->addGlobal('session', $_SESSION);
-    // Se rendre à la page main
-    echo $twig->render('main.twig'); 
-    exit;
 }
-else{
-    echo $twig->render('main.twig'); 
-}
+// Se rendre à la page main
+echo $twig->render('main.twig'); 

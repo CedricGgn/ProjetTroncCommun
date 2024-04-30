@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../CSS/base.css"/>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="header">
+            <div class="navbar">
+                {% block header %}
+                    <a href="../PHP/main.php">Accueil</a>
+                {% endblock %}
+                
+            </div>
+        </div>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+                &copy; Copyright 2024 by CPE Lyon
+            {% endblock %}
+        </div>
+    </body>
+    {% block script %}
+
+    {% endblock %}
+</html>

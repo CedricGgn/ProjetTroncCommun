@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAV</title>
-    <link rel="stylesheet" href="../CSS/main.css">
-</head>
-<body>
-    <div class="navbar">
-        <a class = "text_navbar" href="main.php">Accueil</a>
-        {% if session.username is defined %}
-            <div class = "text_navbar">
-                <!--<i class="fi fi-rr-user"></i>-->{{ session.username }}<a href="logout.php">Déconnexion</a>
-            </div>  
-        {% else %}
-            <div>
-                <a href="../HTML/login.html">Connexion</a>
-            </div>
-        {% endif %}
+
+
+{% block head %}
+        {{ parent() }}
+        <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
+{% endblock %}
+
+{% block header %}
+
+{{ parent() }}
+{% if session.username is defined %}
+    <div class = "Accueil">
+        <div id = "connected"> Connecté en tant que <strong>{{ session.username }}</strong></div>
+        <span id ="seperator">|</span>
+        <a href="../PHP/logout.php">Déconnexion</a>
+    </div>  
+{% else %}
+    <div class ="Accueil">
+        <a href="../PHP/login.php">Connexion</a>
     </div>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
     <div class="dashboard">
         <div class="data-container">
             <div class="data">
@@ -89,8 +93,9 @@
             </tbody>
         </table>
     </div>
+{% endblock %}
 
-</body>
-<script src="../JS/main.js"></script>
+{% block script %}
+        <script src="../JS/main.js"></script>
+{% endblock %}
 
-</html>

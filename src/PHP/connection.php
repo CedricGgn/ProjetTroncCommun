@@ -24,5 +24,3 @@ try {
  $twig = new \Twig\Environment($loader, [
     'cache' => $isProduction ? '../cache' : false, // Utiliser le cache en production, sinon désactiver
 ]);
-
-?>

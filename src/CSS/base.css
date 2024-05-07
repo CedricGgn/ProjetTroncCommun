@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0 auto; /* Utilisation de 'auto' pour la marge gauche et droite */
+  font-family: Arial, sans-serif; /* Changer la police de caractères */
+}
+
+#body-login {
+  height: 71vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#content {
+  height: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#header {
+  height: 10vh;
+  background-color: #f2f2f2;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center; /* Utilisation de space-between pour espacer les éléments */
+}
+
+.navbar {
+  height: 10vh;
+  margin-bottom: 3vh;
+  margin-top: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0056b3; /* Couleur de fond de la navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce sous la navbar */
+}
+
+/* Liens de la navbar */
+.navbar a {
+  color: #fff; /* Couleur du texte */
+  text-align: center; /* Alignement du texte au centre */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  padding: 12px 24px; /* Espacement intérieur des liens */
+  margin: 0 10px; /* Marge autour des liens */
+  border-radius: 5px; /* Coins arrondis des liens */
+  transition: background-color 0.3s ease; /* Animation de transition au survol */
+}
+
+/* Effet de survol */
+.navbar a:hover {
+  background-color: #007bff; /* Couleur de fond au survol */
+}
+
+/* Effet actif */
+.navbar a.active {
+  background-color: #007bff; /* Couleur de fond lorsque le lien est actif */
+}
+
+.text_navbar {
+  color: #fff; /* Couleur du texte */
+}
+
+#connected {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  color: #fff;
+}
+
+#seperator {
+  margin-left: 2vw;
+}
+
+#footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  background-color: #f2f2f2;
+}

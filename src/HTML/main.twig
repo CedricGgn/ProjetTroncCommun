@@ -1,4 +1,5 @@
 
+{% extends "base.html" %}
 
 {% block head %}
         {{ parent() }}
@@ -10,9 +11,11 @@
 {{ parent() }}
 {% if session.username is defined %}
     <div class = "Accueil">
-        <div id = "connected"> Connecté en tant que <strong>{{ session.username }}</strong></div>
-        <span id ="seperator">|</span>
-        <a href="../PHP/logout.php">Déconnexion</a>
+        <div id = "connected">
+            <strong>{{ session.username }}</strong>
+            <span id ="seperator">|</span>
+            <a href="../PHP/logout.php">Déconnexion</a>
+        </div>
     </div>  
 {% else %}
     <div class ="Accueil">

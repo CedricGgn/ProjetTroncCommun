@@ -1,253 +1,198 @@
-body {
-    margin: 0 auto; /* Utilisation de 'auto' pour la marge gauche et droite */
-    width: 90%;
-    height: auto;
-    font-family: Arial, sans-serif; /* Changer la police de caractères */
+.dashboard {
+  width: 100%;
+  height: 80vh;
+  /*border: 1px solid blue;*/
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 3vh;
 }
 
-/* Navbar container */
-.navbar {
-    width: 100%;
-    height: 10vh;
-    margin-bottom: 3vh;
-    margin-top: 1vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0056b3; /* Couleur de fond de la navbar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce sous la navbar */
+.data-container {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
 }
 
-/* Liens de la navbar */
-.navbar a {
-    color: #fff; /* Couleur du texte */
-    text-align: center; /* Alignement du texte au centre */
-    text-decoration: none; /* Supprime le soulignement des liens */
-    padding: 12px 24px; /* Espacement intérieur des liens */
-    margin: 0 10px; /* Marge autour des liens */
-    border-radius: 5px; /* Coins arrondis des liens */
-    transition: background-color 0.3s ease; /* Animation de transition au survol */
-}
-
-/* Effet de survol */
-.navbar a:hover {
-    background-color: #007bff; /* Couleur de fond au survol */
-}
-
-/* Effet actif */
-.navbar a.active {
-    background-color: #007bff; /* Couleur de fond lorsque le lien est actif */
-}
-
-/*
-#username {
-    display: inline-block;
-    padding: 10px; /* ajustez selon vos besoins 
-    border-radius: 50%; /* rend le cadre circulaire 
-    border: 2px solid black; /* couleur, épaisseur et style du trait 
-    width: fit-content; /* s'ajuste à la largeur du contenu 
-    text-align: center; /* centre le texte dans le cercle 
-}
-*/
-
-.text_navbar{
-    color: #fff; /* Couleur du texte */
-
-}
-.dashboard{
-    width: 100%;
-    height: 80vh;
-    /*border: 1px solid blue;*/
-    display: flex;
-    gap: 1vw;
-    margin-bottom: 3vh;
-}
-
-.data-container{
-    width: 30%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 3vh;
-}
-
-.data{
-    width: 100%;
-    height: 30%;
-    background-color: #007bff;
-    border-radius: 5px;
+.data {
+  width: 100%;
+  height: 30%;
+  background-color: #007bff;
+  border-radius: 5px;
 }
 
 .dashboard {
-    width: 100%;
-    height: 85vh;
-    display: flex;
-    gap: 1vw;
-    margin-bottom: 3vh;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 3vh;
 }
 
 .map-container {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .dashboard:nth-of-type(3) {
-    height: 98vh;
+  height: 98vh;
 }
 
 .camera {
-    width: 70%;
-    height: 100%;
+  width: 70%;
+  height: 100%;
 }
 
-.camera video{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
+.camera video {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .controler-container {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5vh;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
 }
 
 .log {
-    height: 80%;
-    width: 100%;
-    overflow-y: auto; /* Ajout d'un défilement vertical si le contenu dépasse */
-    scrollbar-width: thin; /* Définir la largeur de la barre de défilement */
-    scrollbar-color: #ddd #f0f0f0; /* Couleur de la barre de défilement */
+  height: 80%;
+  width: 100%;
+  overflow-y: auto; /* Ajout d'un défilement vertical si le contenu dépasse */
+  scrollbar-width: thin; /* Définir la largeur de la barre de défilement */
+  scrollbar-color: #ddd #f0f0f0; /* Couleur de la barre de défilement */
 }
 
 /* Style général du tableau */
 table {
-    border-collapse: collapse;
-    font-size: 0.9em;
-    width: 100%;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+  font-size: 0.9em;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-table thead{
-    position: sticky;
-    top: 0;
-
+table thead {
+  position: sticky;
+  top: 0;
 }
 
 table thead tr {
-    background-color: #007bff;
-    color: #ffffff;
-    text-align: left;
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: left;
 }
 
 /* Style des cellules de l'en-tête et du corps */
 table th,
 table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 table td:first-child {
-    text-align: center;
+  text-align: center;
 }
 
 /* Style des lignes du corps du tableau */
 table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 /* Style des lignes paires du corps du tableau */
 table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 /* Style du hover sur les lignes du corps */
 table tbody tr:hover {
-    background-color: #d7e8fa;
-    transition: background-color 0.3s ease;
+  background-color: #d7e8fa;
+  transition: background-color 0.3s ease;
 }
 
 /* Style de la dernière ligne du tableau */
 table tbody tr:last-of-type {
-    border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #007bff;
 }
 
 .mode {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .mode-button {
-    width: 25%; /* Largeur des boutons */
-    height: 70%; /* Hauteur des boutons */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #007bff;
-    cursor: pointer;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 25%; /* Largeur des boutons */
+  height: 70%; /* Hauteur des boutons */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #007bff;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .controler {
-    height: 20%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Les boutons seront répartis uniformément */
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Les boutons seront répartis uniformément */
 }
 
-.up-arrow-container, .another-arrow-container {
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px; /* Espacement entre les deux groupes de boutons */
+.up-arrow-container,
+.another-arrow-container {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px; /* Espacement entre les deux groupes de boutons */
 }
 
 .up-arrow-container {
-    flex-direction: column;
-    justify-content: end;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .another-arrow-container {
-    gap: 5%; /* Espacement entre les boutons */
+  gap: 5%; /* Espacement entre les boutons */
 }
 
 .control-button {
-    width: 25%; /* Largeur des boutons */
-    height: 70%; /* Hauteur des boutons */
-    font-size: 20px; /* Taille de la police */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #007bff;
-    cursor: pointer;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 25%; /* Largeur des boutons */
+  height: 70%; /* Hauteur des boutons */
+  font-size: 20px; /* Taille de la police */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #007bff;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.control-button:hover, .mode-button:hover {
-    background-color: #0056b3;
+.control-button:hover,
+.mode-button:hover {
+  background-color: #0056b3;
 }
 
 .mode-button:focus {
-    background-color: #26313e;
+  background-color: #26313e;
 }
 
 .control-button.active {
-    background-color: #0060c6;
-    color: #fff;
+  background-color: #0060c6;
+  color: #fff;
 }

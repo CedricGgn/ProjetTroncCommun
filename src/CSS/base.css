@@ -83,6 +83,17 @@ body {
   background-color: #f2f2f2;
 }
 
-#message-error-login{
-  color : red;
+#message-error-login {
+  color: red;
+}
+
+#brand {
+  width : 15vw;
+  height : 100%;
+  color: white;
+  font-family: Arial, sans-serif; /* Changer la police de caractères */
+  font-size: 5vh;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }

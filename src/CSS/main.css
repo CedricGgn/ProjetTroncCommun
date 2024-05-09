@@ -26,7 +26,7 @@
   }
 
   .left>img{
-    width: 70%;
+    width: 50%;
     height: auto;
     transform: rotate(-45deg); /* Rotation initiale */
     transition: transform 0.5s ease; /* Animation douce */
@@ -89,7 +89,7 @@
   }
   
   .log {
-    height: 80%;
+    height: 100%;
     width: 100%;
     overflow-y: auto; /* Ajout d'un défilement vertical si le contenu dépasse */
     scrollbar-width: thin; /* Définir la largeur de la barre de défilement */
@@ -169,7 +169,7 @@
   }
   
   .controler {
-    height: 20%;
+    height: 30%;
     width: 100%;
     display: flex;
     flex-direction: column;

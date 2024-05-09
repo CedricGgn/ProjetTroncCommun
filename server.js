@@ -73,40 +73,40 @@ app.get('/', (req,res) => {
 
 // Route avec vérification de session
 app.get('/main', async (req, res) => {
-
   try {
       const result = await pool.query("SELECT battery, brightness FROM data ORDER BY id DESC LIMIT 1");
 
       if (result.rows.length > 0) {
-        const battery = result.rows[0].battery; // Récupère la valeur de la batterie
-        const brightness = result.rows[0].brightness; // Récupère la valeur de la luminosité
+        const battery = result.rows[0].battery;
+        const brightness = result.rows[0].brightness;
 
         if (!req.session.username) {
-          // Si l'utilisateur n'est pas authentifié, rediriger ou rendre une page spécifique
+          req.session.username = 'invité';
           return res.render('main', { 
-            session: 'invité',
+            session : req.session,
             battery: battery,
-            brightness: brightness });
-      }
-        else{
-          
-            res.render('main', { 
-                session: req.session,
-                battery: battery,
-                brightness: brightness
-            }); // Rend le fichier 'main.twig'
-      } }else {
+            brightness: brightness
+          });
+        } else {
+          res.render('main', { 
+            session: req.session,
+            battery: battery,
+            brightness: brightness
+          });
+        }
+      } else {
           res.render('main', {
               session: req.session,
               message: 'No data found'
-          }); // Si pas de données, afficher un message
+          });
       }
     
   } catch (err) {
       console.error("Error querying database:", err.message);
-      res.status(500).send("Internal Server Error"); // Gérer les erreurs de requête SQL
+      res.status(500).send("Internal Server Error");
   }
 });
+
 
 
   // Route d'exemple avec vérification de session

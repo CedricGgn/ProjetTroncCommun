@@ -29,4 +29,17 @@ document.addEventListener('keyup', (ev) => {
     element.classList.remove('active');
 });
 
+// main.js
+const userInfo = document.getElementById('user-info'); // Obtenir l'élément avec l'attribut de données
+const username = userInfo.dataset.username; // Récupérer la valeur de 'data-username'
 
+console.log("Username from session:", username); // Afficher le nom d'utilisateur
+
+if (username == 'invité'){
+    for (let element of document.getElementsByClassName("controler")){
+        element.remove();
+     }
+    for (let element of document.getElementsByClassName("mode")){
+        element.remove();
+     }
+}

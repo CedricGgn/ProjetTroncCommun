@@ -10,12 +10,15 @@
 {% block header %}
 
 {{ parent() }}
+
 {% if session.username is defined %}
+    <div id="user-info" data-username="{{ session.username }}"></div>
+
     <div class = "Accueil">
         <div id = "connected">
             <strong>{{ session.username }}</strong>
             <span id ="seperator">|</span>
-            <a href="/logout">Déconnexion</a>
+            <a href="/logout" id="'logout">Déconnexion</a>
         </div>
     </div>  
 {% else %}
@@ -81,7 +84,7 @@
                 <button class="mode-button"><p>Manuelle</p></button> <!-- Flèche vers le bas -->
                 <button class="mode-button"><p>Semi</p></button>
             </div>
-            <div class="controler">
+            <div class="controler" id="controler">
                 <div class="up-arrow-container">
                     <button class="control-button" data-keyboard-key="ArrowUp">&#8593;</button> <!-- Flèche vers le haut -->
                 </div>
@@ -114,5 +117,6 @@
 
 {% block script %}
         <script src="../JS/main.js"></script>
+
 {% endblock %}
 

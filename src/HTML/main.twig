@@ -10,9 +10,9 @@
 {% block header %}
 
 {{ parent() }}
+<div id="user-info" data-username="{{ session.username }}"></div>
 
-{% if session.username is defined %}
-    <div id="user-info" data-username="{{ session.username }}"></div>
+{% if session.username is defined and session.username not in ['invité'] %}
 
     <div class = "Accueil">
         <div id = "connected">
@@ -23,7 +23,11 @@
     </div>  
 {% else %}
     <div class ="Accueil">
-        <a href="/login">Connexion</a>
+        <div id = "connected">
+            <strong>{{ session.username }}</strong>
+            <span id ="seperator">|</span>
+            <a href="/login">Connexion</a>
+        </div>
     </div>
 {% endif %}
 
@@ -79,20 +83,22 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mode">
-                <button class="mode-button"><p>Auto</p></button> <!-- Flèche vers la gauche -->
-                <button class="mode-button"><p>Manuelle</p></button> <!-- Flèche vers le bas -->
-                <button class="mode-button"><p>Semi</p></button>
+            <div class="control">
+                <div class="mode">
+                    <button class="mode-button"><p>Auto</p></button> <!-- Flèche vers la gauche -->
+                    <button class="mode-button"><p>Manuelle</p></button> <!-- Flèche vers le bas -->
+                    <button class="mode-button"><p>Semi</p></button>
+                </div>
+                <div class="controler" id="controler">
+                    <div class="up-arrow-container">
+                        <button class="control-button" data-keyboard-key="ArrowUp">&#8593;</button> <!-- Flèche vers le haut -->
+                    </div>
+                    <div class="another-arrow-container">
+                        <button class="control-button" data-keyboard-key="ArrowLeft">&#8592;</button> <!-- Flèche vers la gauche -->
+                        <button class="control-button" data-keyboard-key="ArrowDown">&#8595;</button> <!-- Flèche vers le bas -->
+                        <button class="control-button" data-keyboard-key="ArrowRight">&#8594;</button> <!-- Flèche vers la droite -->
+                    </div>
             </div>
-            <div class="controler" id="controler">
-                <div class="up-arrow-container">
-                    <button class="control-button" data-keyboard-key="ArrowUp">&#8593;</button> <!-- Flèche vers le haut -->
-                </div>
-                <div class="another-arrow-container">
-                    <button class="control-button" data-keyboard-key="ArrowLeft">&#8592;</button> <!-- Flèche vers la gauche -->
-                    <button class="control-button" data-keyboard-key="ArrowDown">&#8595;</button> <!-- Flèche vers le bas -->
-                    <button class="control-button" data-keyboard-key="ArrowRight">&#8594;</button> <!-- Flèche vers la droite -->
-                </div>
                
             </div>
         </div>
@@ -113,10 +119,15 @@
             </tbody>
         </table>
     </div>
+    <button id="download-pdf" >Télécharger le PDF</button>
+
 {% endblock %}
 
 {% block script %}
-        <script src="../JS/main.js"></script>
+    <script src="https://unpkg.com/jspdf-invoice-template@1.4.3/dist/index.js"></script>
+
+    <script src="../JS/main.js"></script>
+        
 
 {% endblock %}
 

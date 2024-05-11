@@ -43,3 +43,19 @@ if (username == 'invité'){
         element.remove();
      }
 }
+
+
+// ----------------------- Generate PDF file from table --------------
+
+function generatePDF() {
+    const props = {
+        outputType: OutputType.Save,
+        fileName: 'Invoice 2021',
+        // Autres propriétés...
+    };
+
+    const pdfObject = jsPDFInvoiceTemplate(props);
+    console.log(pdfObject);
+}
+
+document.getElementById('download-pdf').addEventListener('click', generatePDF);

@@ -29,21 +29,6 @@ document.addEventListener('keyup', (ev) => {
     element.classList.remove('active');
 });
 
-<<<<<<< HEAD
-document.addEventListener("DOMContentLoaded", function() {
-    var modeButtons = document.getElementById("controler");
-    if (modeButtons) { // Vérifiez si l'élément existe avant de modifier son style
-        var sessionUsername = "<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"; // Récupérez la valeur de session.username depuis PHP
-
-        if (sessionUsername !== "admin") {
-            modeButtons.style.display = "none";
-        }
-        else{
-            modeButtons.style.display = "flex";
-        }
-    }
-});
-=======
 // main.js
 const userInfo = document.getElementById('user-info'); // Obtenir l'élément avec l'attribut de données
 const username = userInfo.dataset.username; // Récupérer la valeur de 'data-username'
@@ -74,4 +59,3 @@ function generatePDF() {
 }
 
 document.getElementById('download-pdf').addEventListener('click', generatePDF);
->>>>>>> 60f8fa9fa5c2775d343b4fd42b956a91ba210491

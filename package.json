@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "jspdf-invoice-template-nodejs": "^1.4.30",
+    "pg": "^8.11.5",
+    "twig": "^1.17.1"
+  }
+  
+}

@@ -4,22 +4,30 @@
 {% block head %}
         {{ parent() }}
         <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block header %}
 
 {{ parent() }}
-{% if session.username is defined %}
+<div id="user-info" data-username="{{ session.username }}"></div>
+
+{% if session.username is defined and session.username not in ['invité'] %}
+
     <div class = "Accueil">
         <div id = "connected">
             <strong>{{ session.username }}</strong>
             <span id ="seperator">|</span>
-            <a href="../PHP/logout.php">Déconnexion</a>
+            <a href="/logout" id="'logout">Déconnexion</a>
         </div>
     </div>  
 {% else %}
     <div class ="Accueil">
-        <a href="../PHP/login.php">Connexion</a>
+        <div id = "connected">
+            <strong>{{ session.username }}</strong>
+            <span id ="seperator">|</span>
+            <a href="/login">Connexion</a>
+        </div>
     </div>
 {% endif %}
 
@@ -29,8 +37,21 @@
     <div class="dashboard">
         <div class="data-container">
             <div class="data">
+                <div class="left">
+                    <img src="../IMAGE/battery_w.png" alt="">
+                </div>
+                <div class="right">
+                    <h1>{{ battery }} %</h1>
+                </div>
+                
             </div>
             <div class="data">
+                <div class="left">
+                    <img src="../IMAGE/brightness.png" alt="">
+                </div>
+                <div class="right">
+                    <h1>{{ brightness }} lux</h1>
+                </div>
                 
             </div>
             <div class="data">
@@ -62,11 +83,23 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mode">
-                <button class="mode-button"><p>Auto</p></button> <!-- Flèche vers la gauche -->
-                <button class="mode-button"><p>Manuelle</p></button> <!-- Flèche vers le bas -->
-                <button class="mode-button"><p>Semi</p></button>
+            <div class="control">
+                <div class="mode">
+                    <button class="mode-button"><p>Auto</p></button> <!-- Flèche vers la gauche -->
+                    <button class="mode-button"><p>Manuelle</p></button> <!-- Flèche vers le bas -->
+                    <button class="mode-button"><p>Semi</p></button>
+                </div>
+                <div class="controler" id="controler">
+                    <div class="up-arrow-container">
+                        <button class="control-button" data-keyboard-key="ArrowUp">&#8593;</button> <!-- Flèche vers le haut -->
+                    </div>
+                    <div class="another-arrow-container">
+                        <button class="control-button" data-keyboard-key="ArrowLeft">&#8592;</button> <!-- Flèche vers la gauche -->
+                        <button class="control-button" data-keyboard-key="ArrowDown">&#8595;</button> <!-- Flèche vers le bas -->
+                        <button class="control-button" data-keyboard-key="ArrowRight">&#8594;</button> <!-- Flèche vers la droite -->
+                    </div>
             </div>
+<<<<<<< HEAD
             <div id="controler">
                 <div class="up-arrow-container">
                     <button class="control-button" data-keyboard-key="ArrowUp">&#8593;</button> <!-- Flèche vers le haut -->
@@ -76,6 +109,8 @@
                     <button class="control-button" data-keyboard-key="ArrowDown">&#8595;</button> <!-- Flèche vers le bas -->
                     <button class="control-button" data-keyboard-key="ArrowRight">&#8594;</button> <!-- Flèche vers la droite -->
                 </div>
+=======
+>>>>>>> 60f8fa9fa5c2775d343b4fd42b956a91ba210491
                
             </div>
         </div>
@@ -96,9 +131,15 @@
             </tbody>
         </table>
     </div>
+    <button id="download-pdf" >Télécharger le PDF</button>
+
 {% endblock %}
 
 {% block script %}
-        <script src="../JS/main.js"></script>
+    <script src="https://unpkg.com/jspdf-invoice-template@1.4.3/dist/index.js"></script>
+
+    <script src="../JS/main.js"></script>
+        
+
 {% endblock %}
 

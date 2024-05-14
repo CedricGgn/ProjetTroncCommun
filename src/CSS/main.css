@@ -1,198 +1,288 @@
-.dashboard {
-  width: 100%;
-  height: 80vh;
-  /*border: 1px solid blue;*/
-  display: flex;
-  gap: 1vw;
-  margin-bottom: 3vh;
-}
-
-.data-container {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 3vh;
-}
-
-.data {
-  width: 100%;
-  height: 30%;
-  background-color: #007bff;
+  
+  .data-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+  }
+  
+  .data {
+    width: 100%;
+    height: 30%;
+    background-color: #007bff;
+  padding: 1.5vw;
   border-radius: 5px;
-}
-
-.dashboard {
-  width: 100%;
-  height: 85vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  gap: 1vw;
-  margin-bottom: 3vh;
-}
+  }
 
-.map-container {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
+  .left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.dashboard:nth-of-type(3) {
-  height: 98vh;
-}
+  .left>img{
+    width: 50%;
+    height: auto;
+    transform: rotate(-45deg); /* Rotation initiale */
+    transition: transform 1s ease; /* Animation douce */
 
-.camera {
-  width: 70%;
-  height: 100%;
-}
+  }
 
-.camera video {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-}
+  .right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.controler-container {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5vh;
-}
+  .right>h1{
+    color: #fff;
+    font-size: 2.5rem; /* Taille de police relative */
+  }
 
-.log {
-  height: 80%;
-  width: 100%;
-  overflow-y: auto; /* Ajout d'un défilement vertical si le contenu dépasse */
-  scrollbar-width: thin; /* Définir la largeur de la barre de défilement */
-  scrollbar-color: #ddd #f0f0f0; /* Couleur de la barre de défilement */
-}
+ 
+  
+  .dashboard {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    gap: 1vw;
+    margin-bottom: 3vh;
+    justify-content: space-between;
+  }
+  
+  .map-container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dashboard:nth-of-type(3) {
+    height: 98vh;
+  }
+  
+  .camera {
+    width: 70%;
+    height: 100%;
+  }
+  
+  .camera video {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
 
-/* Style général du tableau */
-table {
-  border-collapse: collapse;
-  font-size: 0.9em;
-  width: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
+  .control{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .controler-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+  }
+  
+  .log {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto; /* Ajout d'un défilement vertical si le contenu dépasse */
+    scrollbar-width: thin; /* Définir la largeur de la barre de défilement */
+    scrollbar-color: #ddd #f0f0f0; /* Couleur de la barre de défilement */
+  }
+  
+  /* Style général du tableau */
+  table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  table thead {
+    position: sticky;
+    top: 0;
+  }
+  
+  table thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  /* Style des cellules de l'en-tête et du corps */
+  table th,
+  table td {
+    padding: 12px 15px;
+  }
+  
+  table td:first-child {
+    text-align: center;
+  }
+  
+  /* Style des lignes du corps du tableau */
+  table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  /* Style des lignes paires du corps du tableau */
+  table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  /* Style du hover sur les lignes du corps */
+  table tbody tr:hover {
+    background-color: #d7e8fa;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style de la dernière ligne du tableau */
+  table tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .mode {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mode-button {
+    width: 25%; /* Largeur des boutons */
+    height: 70%; /* Hauteur des boutons */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #007bff;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .controler {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Les boutons seront répartis uniformément */
+  }
+  
+  .up-arrow-container,
+  .another-arrow-container {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px; /* Espacement entre les deux groupes de boutons */
+  }
+  
+  .up-arrow-container {
+    flex-direction: column;
+    justify-content: end;
+  }
+  
+  .another-arrow-container {
+    gap: 5%; /* Espacement entre les boutons */
+  }
+  
+  .control-button {
+    width: 25%; /* Largeur des boutons */
+    height: 70%; /* Hauteur des boutons */
+    font-size: 20px; /* Taille de la police */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #007bff;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .control-button:hover,
+  .mode-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .mode-button:focus {
+    background-color: #26313e;
+  }
+  
+  .control-button.active {
+    background-color: #0060c6;
+    color: #fff;
+  }
+  
 
-table thead {
-  position: sticky;
-  top: 0;
-}
+  @media screen and (max-width: 1200px) {
+    .dashboard {
+      flex-direction: column;
+    }
 
-table thead tr {
-  background-color: #007bff;
-  color: #ffffff;
-  text-align: left;
-}
+    .data-container {
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+    }
+    .map-container {
+      width: 100%;
+      align-items: center;
+    }
 
-/* Style des cellules de l'en-tête et du corps */
-table th,
-table td {
-  padding: 12px 15px;
-}
+    .camera {
+      width: 100%;
+      height: 50%;
+    }
 
-table td:first-child {
-  text-align: center;
-}
+    .controler-container{
+      height: 50%;
+      width: 100%;
+      flex-direction: row;
+    }
 
-/* Style des lignes du corps du tableau */
-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
 
-/* Style des lignes paires du corps du tableau */
-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
+    }
 
-/* Style du hover sur les lignes du corps */
-table tbody tr:hover {
-  background-color: #d7e8fa;
-  transition: background-color 0.3s ease;
-}
+    @media screen and (max-width: 600px) {
 
-/* Style de la dernière ligne du tableau */
-table tbody tr:last-of-type {
-  border-bottom: 2px solid #007bff;
-}
-
-.mode {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mode-button {
-  width: 25%; /* Largeur des boutons */
-  height: 70%; /* Hauteur des boutons */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #007bff;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#controler {
-  height: 20%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Les boutons seront répartis uniformément */
-}
-
-.up-arrow-container,
-.another-arrow-container {
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 10px; /* Espacement entre les deux groupes de boutons */
-}
-
-.up-arrow-container {
-  flex-direction: column;
-  justify-content: end;
-}
-
-.another-arrow-container {
-  gap: 5%; /* Espacement entre les boutons */
-}
-
-.control-button {
-  width: 25%; /* Largeur des boutons */
-  height: 70%; /* Hauteur des boutons */
-  font-size: 20px; /* Taille de la police */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #007bff;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.control-button:hover,
-.mode-button:hover {
-  background-color: #0056b3;
-}
-
-.mode-button:focus {
-  background-color: #26313e;
-}
-
-.control-button.active {
-  background-color: #0060c6;
-  color: #fff;
-}
+      .data-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+      .map-container {
+        width: 100%;
+        align-items: center;
+      }
+      .controler-container{
+        height: 50%;
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 1vh;
+      }
+      .controler{
+        height: 70%;
+      }
+     
+      }
+      

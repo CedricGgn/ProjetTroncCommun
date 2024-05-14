@@ -10,10 +10,9 @@
   <body>
     <div class="header">
       <div class="navbar">
-        
-        <a href="../PHP/main.php">Accueil</a>
-        <div id = "brand"></div>
-        {% block header %}{% endblock %}
+        {% block header %}
+          <a href="/main">Accueil</a>
+        {% endblock %}
       </div>
     </div>
     <div id="content">{% block content %}{% endblock %}</div>

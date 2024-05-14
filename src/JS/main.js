@@ -29,6 +29,7 @@ document.addEventListener('keyup', (ev) => {
     element.classList.remove('active');
 });
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function() {
     var modeButtons = document.getElementById("controler");
     if (modeButtons) { // Vérifiez si l'élément existe avant de modifier son style
@@ -42,3 +43,35 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+=======
+// main.js
+const userInfo = document.getElementById('user-info'); // Obtenir l'élément avec l'attribut de données
+const username = userInfo.dataset.username; // Récupérer la valeur de 'data-username'
+
+console.log("Username from session:", username); // Afficher le nom d'utilisateur
+
+if (username == 'invité'){
+    for (let element of document.getElementsByClassName("controler")){
+        element.remove();
+     }
+    for (let element of document.getElementsByClassName("mode")){
+        element.remove();
+     }
+}
+
+
+// ----------------------- Generate PDF file from table --------------
+
+function generatePDF() {
+    const props = {
+        outputType: OutputType.Save,
+        fileName: 'Invoice 2021',
+        // Autres propriétés...
+    };
+
+    const pdfObject = jsPDFInvoiceTemplate(props);
+    console.log(pdfObject);
+}
+
+document.getElementById('download-pdf').addEventListener('click', generatePDF);
+>>>>>>> 60f8fa9fa5c2775d343b4fd42b956a91ba210491

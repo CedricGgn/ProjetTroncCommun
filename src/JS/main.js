@@ -28,3 +28,17 @@ document.addEventListener('keyup', (ev) => {
     );
     element.classList.remove('active');
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var modeButtons = document.getElementById("controler");
+    if (modeButtons) { // Vérifiez si l'élément existe avant de modifier son style
+        var sessionUsername = "<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"; // Récupérez la valeur de session.username depuis PHP
+
+        if (sessionUsername !== "admin") {
+            modeButtons.style.display = "none";
+        }
+        else{
+            modeButtons.style.display = "flex";
+        }
+    }
+});
